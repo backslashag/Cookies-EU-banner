@@ -136,7 +136,7 @@
       var date = new Date();
       date.setTime(date.getTime() + this.cookieTimeout);
 
-      document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/';
+      document.cookie = name + '=' + value + ';expires=' + date.toGMTString() + ';path=/;secure';
     },
 
     /*
@@ -147,8 +147,8 @@
       if (hostname.indexOf('www.') === 0) {
         hostname = hostname.substring(4);
       }
-      document.cookie = name + '=; domain=.' + hostname + '; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/';
-      document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/';
+      document.cookie = name + '=; domain=.' + hostname + '; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/;secure';
+      document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/;secure';
     },
 
     addEventListener: function (DOMElement, evnt, callback) {
